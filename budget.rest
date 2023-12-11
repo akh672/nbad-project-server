@@ -1,0 +1,118 @@
+POST  http://localhost:3000/api/v1/budget/createBudget
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+Content-Type: application/json
+
+{
+    "budget": {
+        "name": "Budget 1",
+        "totalAmount": 1000,
+        "startDate": "2020-01-01",
+        "endDate": "2020-12-31",
+        "categories": [
+            {
+                "name": "Category 1",
+                "amount": 500
+            },
+            {
+                "name": "Category 2",
+                "amount": 500
+            }
+        ]
+        
+    }
+}
+###
+
+POST http://localhost:3000/api/v1/budget/addBudget
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+Content-Type: application/json
+
+{
+    "name": "Budget 1",
+    "totalAmount": "5000",
+    "startDate": "2020-01-01",
+    "endDate": "2020-12-31"
+}
+
+
+###
+
+POST http://localhost:3000/api/v1/budget/addExpense
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+Content-Type: application/json
+
+{
+
+        "description": "Expense 64532",
+        "amount": "400",
+        "date": "2020-01-08",
+        "categoryId": "65738e91d3132c4f661af56d"
+    
+}
+
+
+###
+POST http://localhost:3000/api/v1/budget/addCategoryToBudget
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+Content-Type: application/json
+
+{
+    "name": "Category apna",
+    "allocatedAmount": 5000,
+    "spend":1200,
+    "budgetId":"65735a9b360db3b35fc92c92"
+}
+###
+// get all expenses of a specific category
+POST  http://localhost:3000/api/v1/budget/getAllCategoryExpenses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+Content-Type: application/json
+
+{
+    "categoryId":"6573501bb8fd4bc35edaf6af"
+}
+###
+POST  http://localhost:3000/api/v1/budget/getAllBudgetExpenses
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+Content-Type: application/json
+
+{
+    "budgetId":"65735aba360db3b35fc92c97"
+}
+
+###
+POST  http://localhost:3000/api/v1/budget/deleteBudgetForUser
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+Content-Type: application/json
+
+{
+    "budgetId":"6573489f2b36ad095c542b32"
+
+}
+###
+POST  http://localhost:3000/api/v1/budget/deleteCategory
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+Content-Type: application/json
+
+{
+    "categoryId":"657359cc22416fa73789335e"
+
+}
+
+###
+GET  http://localhost:3000/api/v1/budget/getAllUserExpense
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+
+
+###
+GET  http://localhost:3000/api/v1/budget/getAllUserCategories
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+
+###
+
+GET  http://localhost:3000/api/v1/budget/getAllBudgets
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+
+###
+GET  http://localhost:3000/api/v1/budget/getAllUserExpensesSortedByDate
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY

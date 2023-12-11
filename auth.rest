@@ -1,0 +1,31 @@
+GET http://localhost:3000/api/v1/test
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAxNzA1ODA4LCJleHAiOjE3MDE3MDU4NDR9LCJpYXQiOjE3MDE3MDU4MzYsImV4cCI6MTcwMTcwNTg3Mn0.SHld7_zTyBfA1-K-FqEnbWgIdX17W0JEGf6w9CV39XU
+###
+
+POST http://localhost:3000/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "nama@naman.com",
+    "password": "123456"
+}
+
+###
+
+POST http://localhost:3000/api/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "naman@naman.com",
+    "password": "123456"
+}
+
+### 
+POST http://localhost:3000/api/v1/auth/getAcessToken
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAyMDQ4OTU5LCJleHAiOjE3MDI5MzI1NTl9.EdNte6hWlKVkslFUBTLX4JdwqrHN2Usmc7s5MX-7dTY
+Content-Type: Application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NmRlYzRlNmVhNmQ1MmFkMTc4NjhmMCIsIm5hbWUiOiJKb2huIERvZSIsImVtYWlsIjoibmFtYW5AbmFtYW4uY29tIiwiaWF0IjoxNzAxNzA1ODA4LCJleHAiOjE3MDE3MDU4OTR9.z6SDBoKVjHACukcHIWoyJqX4WGDpK662orf6Q78lV6Q"
+}
