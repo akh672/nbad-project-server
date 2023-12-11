@@ -15,7 +15,7 @@ const { Authenticate } = require("./routes/auth");
 
 //connecting to database
 mongoose.connect(
-  "mongodb+srv://kshitijvarshney92:ZemmR3a7Kc2FqINy@cluster0.cjxz35u.mongodb.net/?retryWrites=true&w=majority"
+  "mongodb+srv://vuppalvanchuakhil:jnAnikHhoUzHw1G2@cluster0.ycdvl4r.mongodb.net/?retryWrites=true&w=majority"
 );
 const db = mongoose.connection;
 db.on("error", (error) => {
