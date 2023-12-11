@@ -15,7 +15,7 @@ const { Authenticate } = require("./routes/auth");
 
 //connecting to database
 mongoose.connect(
-  "mongodb+srv://vuppalvanchuakhil:jnAnikHhoUzHw1G2@cluster0.ycdvl4r.mongodb.net/?retryWrites=true&w=majority"
+  "mongodb+srv://kshitijvarshney92:ZemmR3a7Kc2FqINy@cluster0.cjxz35u.mongodb.net/?retryWrites=true&w=majority"
 );
 const db = mongoose.connection;
 db.on("error", (error) => {
@@ -66,7 +66,7 @@ app.use((error, req, res, next) => {
 });
 
 // server
-const PORT = 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
